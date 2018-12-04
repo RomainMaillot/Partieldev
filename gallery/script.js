@@ -5,10 +5,10 @@ class GalleryImage
         this.$container = $container
         this.isBig = false
 
-        this.click()
+        this.event()
     }
 
-    click()
+    event()
     {
         this.$container.addEventListener(
             'click',
@@ -24,6 +24,16 @@ class GalleryImage
                 }
             }
         )
+        window.addEventListener(
+            'keydown',
+            (_event) =>
+            {
+                if(_event.keyCode == 27 && this.isBig)
+                {
+                    this.goLittle()
+                }
+            }
+        )
     }
 
     goBig()
@@ -36,15 +46,19 @@ class GalleryImage
         setTimeout(() => {
             this.$container.classList.add('image--large')
             this.$container.style.opacity = "1"
-        }, 300)
+        }, 100)
     }
 
     goLittle()
     {
         this.isBig = false
-        this.$container.src = this.$container.dataset.small
-        this.$container.classList.remove('image--large')
-        this.$container.parentNode.classList.remove('image--container--large')
-        this.$container.parentNode.classList.add('image--container--small')
+        this.$container.style.opacity = "0"
+        setTimeout(() => {
+            this.$container.src = this.$container.dataset.small
+            this.$container.classList.remove('image--large')
+            this.$container.parentNode.classList.remove('image--container--large')
+            this.$container.parentNode.classList.add('image--container--small')
+            this.$container.style.opacity = "1"
+        }, 300)
     }
 }
