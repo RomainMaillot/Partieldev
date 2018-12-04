@@ -1,1 +1,8 @@
-const gallery1 = new Gallery('images/small/1.jpg','images/large/1.jpg')
+const $gallery = document.querySelector('.js-gallery')
+const $images = $gallery.querySelectorAll('.image--container img')
+
+for(const $image of $images)
+{
+    const image = new GalleryImage($image)
+}
+
