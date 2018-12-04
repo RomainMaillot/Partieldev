@@ -1,1 +1,1 @@
-console.log('hey')
+const gallery1 = new Gallery('images/small/1.jpg','images/large/1.jpg')

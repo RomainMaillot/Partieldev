@@ -1,4 +1,36 @@
-h1
+html,
+body
 {
-    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+nav
+{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #bdc3c7;
+}
+
+nav h1
+{
+    color: grey;
+}
+
+nav ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
 }
