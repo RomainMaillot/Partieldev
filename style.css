@@ -50,24 +50,37 @@ main .js-gallery
     justify-content: space-between;
 }
 
-main .js-gallery .image--container
+main .js-gallery .image--container--small
 {
     padding: 2%;
+    position: relative;
 }
 
-main .js-gallery .image--container.image--container--large
+
+main .js-gallery .image--container--small:hover::after
+{
+    content: "View more";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: white;
+    text-align: center;
+}
+
+main .js-gallery .image--container--large
 {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background: #00000080
+    background: #00000080;
+    z-index: 2;
 }
 
-main .js-gallery .image--container .image--large
+main .js-gallery .image--container--large .image--large
 {
-    transition: 0.3s;
+    transition: 0.2s;
     position: fixed;
-    transform: translateX(10%) translateY(10%);
+    transform: translateX(20%) translateY(10%);
 }

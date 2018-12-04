@@ -30,6 +30,7 @@ class GalleryImage
     {
         this.isBig = true
         this.$container.style.opacity = "0"
+        this.$container.parentNode.classList.remove('image--container--small')
         this.$container.parentNode.classList.add('image--container--large')
         this.$container.src = this.$container.dataset.large
         setTimeout(() => {
@@ -44,5 +45,6 @@ class GalleryImage
         this.$container.src = this.$container.dataset.small
         this.$container.classList.remove('image--large')
         this.$container.parentNode.classList.remove('image--container--large')
+        this.$container.parentNode.classList.add('image--container--small')
     }
 }
